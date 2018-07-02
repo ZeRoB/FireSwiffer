@@ -17,8 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
-        Auth.auth().signIn(withEmail: "robert.zelhofer+test@gmail.com", password: "123456789") { (user, error) in
-            print("User: \(user?.email ?? ""), Error: \(error)")
+        Auth.auth().signIn(withEmail: "robert.zelhofer+test@gmail.com", password: "123456789") { (result, error) in
+            print("User: \(result?.user.email ?? ""), Error: \(error?.localizedDescription ?? "")")
         }
         return true
     }
